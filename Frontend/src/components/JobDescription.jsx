@@ -38,7 +38,7 @@ const JobDescription = () => {
 
     const applyJobHandler = async() =>{
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/application/apply/${jobId}` ,{},  {withCredentials: true});
+            const res = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/api/v1/application/apply/${jobId}` ,{},  {withCredentials: true});
             console.log(res.data);
             
             if(res.data.success){

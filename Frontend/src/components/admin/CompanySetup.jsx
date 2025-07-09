@@ -55,7 +55,7 @@ const CompanySetup = () => {
         if(input.file)formData.append("file", input.file);
 
         try {
-            const res = await axios.put(`http://localhost:8000/api/v1/company/update/${companyId}` , formData , {
+            const res = await axios.put(`${import.meta.env.VITE_BASE_API_URL}/api/v1/company/update/${companyId}` , formData , {
                 headers:{
                     "Content-Type": "multipart/form-data"
                 },
@@ -65,13 +65,6 @@ const CompanySetup = () => {
             if(res.data.success){
                 toast.success(res?.data?.message);  
                 dispatch(setSingleCompany(res?.data?.company));  
-                // dispatch(
-                //     setAllCompanies(
-                //       allCompanies.map((c) =>
-                //         c._id === res?.data?.company?._id ? res?.data?.company : c
-                //       )
-                //     )
-                // );
                 navigate(`/admin/companies`);
             }
 

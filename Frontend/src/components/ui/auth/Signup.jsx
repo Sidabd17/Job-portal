@@ -49,7 +49,7 @@ const Signup = () => {
         formData.append("role", input.role);  
         if(input.file)formData.append("file", input.file);  
 
-        const res = await axios.post(`http://localhost:8000/api/v1/user/register`, formData ,{
+        const res = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/api/v1/user/register`, formData ,{
             headers:{
                 "Content-Type": "multipart/form-data"
             },

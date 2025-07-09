@@ -15,7 +15,7 @@ const AppliedJobtable = () => {
     useEffect(()=>{
         const fetchAppliedJobs = async ()=>{
             try {
-                const res = await axios.get('http://localhost:8000/api/v1/application/get', {withCredentials: true});
+                const res = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/api/v1/application/get`, {withCredentials: true});
 
                 if(res.data.success){
                     console.log(res.data.applications);

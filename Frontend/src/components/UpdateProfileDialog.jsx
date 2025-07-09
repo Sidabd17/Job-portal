@@ -56,7 +56,7 @@ const UpdateProfileDialog = ({open ,setOpen}) => {
 
            try {
                 
-                const res = await axios.post(`http://localhost:8000/api/v1/user/profile/update`, formData ,{
+                const res = await axios.post(`${import.meta.env.VITE_BASE_API_URL}/api/v1/user/profile/update`, formData ,{
                     headers:{
                         "Content-Type": "multipart/form-data"
                     },

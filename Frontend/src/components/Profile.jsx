@@ -41,7 +41,7 @@ const Profile = () => {
         formData.append("file", file);
 
         try {
-            const res = await axios.put(`http://localhost:8000/api/v1/user/profile/update/profilephoto` , formData , {withCredentials: true});
+            const res = await axios.put(`${import.meta.env.VITE_BASE_API_URL}/api/v1/user/profile/update/profilephoto` , formData , {withCredentials: true});
             if(res.data.success){
                 toast.success(res.data.message);
                 dispatch(setUser(res.data.user))

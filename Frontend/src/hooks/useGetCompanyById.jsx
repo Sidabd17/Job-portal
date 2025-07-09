@@ -10,7 +10,7 @@ const useGetCompanyById = (id) => {
        useEffect(()=>{
             const getCompanyById = async () =>{
                 try {
-                    const res = await axios.get(`http://localhost:8000/api/v1/company/get/${id}`, {withCredentials: true});
+                    const res = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/api/v1/company/get/${id}`, {withCredentials: true});
 
                     if(res.data.success){
                         // toast.success(res.data.message);

@@ -14,7 +14,7 @@ const ApplicantsTable = () => {
 
     const statushandler = async(status , id)=>{
         try {
-            const res = await axios.put(`http://localhost:8000/api/v1/application/status/${id}/update` , {status} , 
+            const res = await axios.put(`${import.meta.env.VITE_BASE_API_URL}/api/v1/application/status/${id}/update` , {status} , 
                 {withCredentials: true});
 
             if(res.data.success){

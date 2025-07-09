@@ -19,7 +19,7 @@ const Browse = () => {
     useEffect(()=>{
         const getSearchedJobs = async()=>{
             try {
-                const res = await axios.get(`http://localhost:8000/api/v1/job/get?keyword=${browseInput}`,{withCredentials: true});
+                const res = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/api/v1/job/get?keyword=${browseInput}`,{withCredentials: true});
                 if(res.data.success){
                     console.log(res.data.jobs);
                     toast.success(res.data.message);

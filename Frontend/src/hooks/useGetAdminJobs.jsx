@@ -11,7 +11,7 @@ const useGetAdminJobs = () => {
    useEffect(()=>{
     const getAdminJobs = async()=>{
         try {
-            const res = await axios.get('http://localhost:8000/api/v1/job/getadminjobs',{
+            const res = await axios.get(`${import.meta.env.VITE_BASE_API_URL}/api/v1/job/getadminjobs`,{
                 withCredentials: true
             })
             if(res.data.success){
