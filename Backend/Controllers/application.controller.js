@@ -1,6 +1,6 @@
 
 // const { populate } = require("dotenv");
-const Application = require("../Models/application.model");
+const Application = require("../models/application.model");
 const Job = require('../models/job.model');
 const applyJob = async (req, res) => {
     try {
