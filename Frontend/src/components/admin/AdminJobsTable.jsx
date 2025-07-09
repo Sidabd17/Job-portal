@@ -14,7 +14,7 @@ import { Popover ,PopoverContent, PopoverTrigger} from "../ui/popover";
 // import {  } from "@radix-ui/react-popover";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import useGetAdminJobs from "@/hooks/UseGetAdminJobs";
+import useGetAdminJobs from "@/hooks/useGetAdminJobs";
 
 const AdminJobsTable = () => {
     useGetAdminJobs();
